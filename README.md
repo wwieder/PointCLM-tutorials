@@ -16,8 +16,21 @@ To get started you can:
 ```
   git remote add upstream https://github.com/wwieder/PointCLM-tutorials.git
 ```
-Check that it worked with `git remote -v`
+Check that it worked with: `git remote -v`
 
+4. Checkout a branch to work on.
+```
+  git checkout -b branch_test
+```
+Check what branches you have now with:`git branch`
+You can also see the log of commits with: `git log --oneline --decorate`
+
+5. You may want to fetch and pull the latest from the remote repository, this avoids conflicts
+```
+  git checkout main
+  git fetch upstream
+  git pull
+```
 
 Some [basics of git are here](https://git-scm.com/about)
 For more on setting up CLM, see the [CTSM wiki](https://github.com/ESCOMP/CTSM/wiki/Quick-start-to-CTSM-development-with-git)
