@@ -75,17 +75,35 @@ cd ~/ctsm/cime/scripts
 More on creating a new case can be found on the [CESM tutorial website](https://escomp.github.io/CESM/release-cesm2/quickstart.html#create-a-case)
 ### Set up, build, and submit the case
 
-We'll also get the latest NEON data for our case
-
+First you'll move into your case directory.
 ```
 cd GUAN_SP_test
-./xmlchange NEONVERSION=latest
-./case.setup 
-./case.build
-./case.setup
 ```
 
-## Alternate use run_neon to create, build, and run a case
+Then we'll customize our case a bit to get the latest NEON data for our case
+```
+./xmlchange NEONVERSION=latest
+
+Finally we'll setup, build, and submit your case
+```
+./case.setup 
+./case.build
+./case.submit
+```
+
+The build will take a while, like 5 minutes, get a coffee and relax.
+
+After submitting the case, the model will download a bunch of data, but then should start running before too long.
+You can check this with `qstat -u $USER`. Alternatively, you can move to your run directory
+
+```
+cd ~/scratch/GUAN_SP_test/run
+ls -lrt
+```
+
+
+
+## Alternative use run_neon to create, build, and run a case
 
 ### Activate a conda environment
 First you need to load conda (a python package manager) and activate an environment. This example is specific for derecho.
