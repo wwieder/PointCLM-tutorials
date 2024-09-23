@@ -72,6 +72,7 @@ cd ~/ctsm/cime/scripts
     - stub components for everything else (ocean, runoff, glacier, etc)
 - user-mod directories are helpful for setting up details of your case
 
+More on creating a new case can be found on the [CESM tutorial website](https://escomp.github.io/CESM/release-cesm2/quickstart.html#create-a-case)
 ### Set up, build, and submit the case
 
 We'll also get the latest NEON data for our case
