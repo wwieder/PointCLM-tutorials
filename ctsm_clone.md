@@ -83,6 +83,7 @@ cd GUAN_SP_test
 Then we'll customize our case a bit to get the latest NEON data for our case
 ```
 ./xmlchange NEONVERSION=latest
+```
 
 Finally we'll setup, build, and submit your case
 ```
