@@ -52,27 +52,13 @@ You can do this by creating a soft link:
 ln -s /glade/derecho/scratch/$USER ~/scratch
 ```
 
-### Activate a conda environment
-First you need to load conda (a python package manager) and activate an environment. This example is specific for derecho.
-
-```
-ml conda
-conda activate npl-2024b
-```
-
-Note, the _right_ way to do this is to use ctsm_pylib, but creating conda environments is really slow on derecho.
-The short cut above should work, but if you want to play by the rules (or are working on a different machine) do this:
-```
-cd ~/ctsm
-./py_env_create
-conda activate ctsm_pylib
-```
-You can see all your conda environments with `conda env list`
-
 ### Run a NEON case!
 
 
 This is the 'regular' way of creating a new case
+
+**NOTE** in this example the case name and usermods are for the NEON site Guanica, GUAN,
+but you can chose any NEON site you like
 
 ```
 cd ~/ctsm/cime/scripts
