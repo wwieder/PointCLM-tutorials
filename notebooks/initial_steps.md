@@ -25,9 +25,11 @@ Below is an example for how this could be done for a case in Boulder, Colorado.
 Here we'll subset the surface dataset, datm data, and create usermods (steps 1, 2, & 4, above) with a simple call to `subset_data`
 
 ```
+ml conda
+conda activate npl-2024a
+
 cd ~/CTSM/tools/site_and_regional/
 ./subset_data point --help
-conda activate npl-2024a
 
 ./subset_data point\
   --lat 40.015\ 
@@ -59,11 +61,24 @@ Now we'll create a single point case that uses the data we just subset for our s
 cd ~/CTSM/cime/scripts
 
 ./create_newcase\
-  --case /glade/derecho/scratch/$USER/BOCO/boco_c3_sp_test2\ 
+  --case /glade/derecho/scratch/$USER/BOCO/boco_c3_sp_test1\ 
   --compset 2000_DATM%1PT_CLM60%SP_SICE_SOCN_SROF_SGLC_SWAV_SESP\
   --res CLM_USRDAT\
   --output-root /glade/derecho/scratch/$USER/BOCO\
   --user-mods-dir /glade/derecho/scratch/$USER/BOCO/user_mods\
   --run-unsupported\
 
-``` 
+```
+
+#### Follow the other steps
+Now that you've created a case, you can setup, build and submit your case.  
+```
+cd /glade/derecho/scratch/$USER/BOCO//boco_c3_sp_test1 
+./case_setup
+./case_build
+./case_submit
+
+```
+
+There are likely some other case customizations you may want to consider
+
