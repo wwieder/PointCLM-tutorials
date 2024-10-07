@@ -29,13 +29,24 @@ cd ~/CTSM/tools/site_and_regional/
 ./subset_data point --help
 conda activate npl-2024a
 
-./subset_data point --lat 40.015 --lon 254.73 --site BOCO --dompft 13 --create-surface --create-datm --create-user-mods --datm-syr 2000 --datm-eyr 2009 --outdir /glade/derecho/scratch/$USER/BOCO
+./subset_data point\
+  --lat 40.015\ 
+  --lon 254.73\ 
+  --site BOCO\ 
+  --dompft 13\ 
+  --create-surface\ 
+  --create-datm\ 
+  --create-user-mods\ 
+  --datm-syr 2000\ 
+  --datm-eyr 2009\ 
+  --outdir /glade/derecho/scratch/$USER/BOCO
 
 ```
 
 Some notes on subset data
 - Subset data is supposed to work with the ctsm_pylib conda environmnet, 
 but if you don't have that set up yet you can use a preloaded conda environment on derecho (as done above)
+- The backslashes at the end of each line just make the text easier to read.
 - `--lon` can have negative values for West, or 0-360 degrees, this examples uses the later.
 - `--dompft` sets the dominant pft.  This example sets to 100% C3 grass
 - `--create-datm` take a bit of time, just pick the years you want to run over.
@@ -47,11 +58,12 @@ Now we'll create a single point case that uses the data we just subset for our s
 ```
 cd ~/CTSM/cime/scripts
 
-./create_newcase 
-  --case /glade/derecho/scratch/$USER/BOCO/boco_c3_sp_test2 
-  --compset 2000_DATM%1PT_CLM60%SP_SICE_SOCN_SROF_SGLC_SWAV_SESP
-  --res CLM_USRDAT 
-  --output-root /glade/derecho/scratch/$USER/BOCO
-  --user-mods-dir /glade/derecho/scratch/$USER/BOCO/user_mods
-  --run-unsupported
+./create_newcase\
+  --case /glade/derecho/scratch/$USER/BOCO/boco_c3_sp_test2\ 
+  --compset 2000_DATM%1PT_CLM60%SP_SICE_SOCN_SROF_SGLC_SWAV_SESP\
+  --res CLM_USRDAT\
+  --output-root /glade/derecho/scratch/$USER/BOCO\
+  --user-mods-dir /glade/derecho/scratch/$USER/BOCO/user_mods\
+  --run-unsupported\
+
 ``` 
