@@ -73,12 +73,16 @@ cd ~/CTSM/cime/scripts
 #### Follow the other steps
 Now that you've created a case, you can setup, build and submit your case.  
 ```
-cd /glade/derecho/scratch/$USER/BOCO//boco_c3_sp_test1 
+cd /glade/derecho/scratch/$USER/BOCO/boco_c3_sp_test1 
 ./case_setup
 ./case_build
 ./case_submit
 
 ```
 
-There are likely some other case customizations you may want to consider
+There are likely some other case customizations you may want to consider like modifying:
+- Your datm data range with `DATM_YR_START` and `DATM_YR_END`;
+- How long you want to run for with `STOP_OPTION` and `STOP_N`;- The frequency and data you want on history files in `user_nl_clm`
+
+
 
